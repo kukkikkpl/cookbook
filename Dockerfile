@@ -1,0 +1,13 @@
+FROM python:3.10-slim
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
+
+ENV TZ=Asia/Bangkok
+
+ENV PROJECT_ROOT /app
+RUN mkdir -p $PROJECT_ROOT
+WORKDIR $PROJECT_ROOT
+
+COPY backend ./backend
+COPY requirements.txt .
+COPY manage.py .
